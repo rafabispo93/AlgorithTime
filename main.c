@@ -34,11 +34,12 @@ long bolha(void) {
            cont++;
            if(A[i]>A[i+1])
            {   
-               trocas++;
+               
                parar = 0;
                aux = A[i];
                A[i] = A[i+1];
                A[i+1] = aux;
+               trocas++;
            }
        }
    }
@@ -61,10 +62,10 @@ long selecao(void) {
       }
     }
     if (i != min) {
-      trocas++;
       int swap = A[i];
       A[i] = A[min];
       A[min] = swap;
+      trocas++;
     }
   }
   printf("trocas da seleçao: %d e ", trocas);
@@ -80,11 +81,11 @@ long insercao(void) {
     for(i = 0; i < N; i++){
                  j = i;
                  while((A[j] < A[j - 1])&&(j!=0)) {
-                        trocas++;
                         cont++;
                         aux = A[j];
                         A[j] = A[j - 1];
                         A[j - 1] = aux;
+                        trocas++;
                         j--;    
                 }               
      }
@@ -211,7 +212,13 @@ int main(void) {
     
     if (N<16) printf("vetor = \n");
     for (i=0;i<N;i++) {
-        A[i] = N* ((double)rand()/RAND_MAX);    
+        //Random
+//        A[i] = N* ((double)rand()/RAND_MAX);
+        //Crescente
+//        A[i] = i;
+        //Decrescente
+        A[i] = (N - 1) - i;
+//        printf("%d  ,",A[i]);
         if (N<16) printf("%d ", A[i]);             
     }
     printf("\n");
