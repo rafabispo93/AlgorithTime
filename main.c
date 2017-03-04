@@ -71,12 +71,12 @@ long selecao(void) {
   printf("trocas da seleçao: %d e ", trocas);
   return cont;
 }
-
+long Itrocas = 0;
 long insercao(void) {
 
     int i, j, aux;
     long cont = 0;
-    long trocas = 0;
+    
     
     for(i = 0; i < N; i++){
                  j = i;
@@ -85,11 +85,11 @@ long insercao(void) {
                         aux = A[j];
                         A[j] = A[j - 1];
                         A[j - 1] = aux;
-                        trocas++;
+                        Itrocas++;
                         j--;    
                 }               
      }
-    printf("trocas da insercao: %lu e ", trocas);
+    printf("trocas da insercao: %lu e ", Itrocas);
     return cont;   
 }
 long trocasMerge = 0;
@@ -215,11 +215,11 @@ int main(void) {
         //Random
 //        A[i] = N* ((double)rand()/RAND_MAX);
         //Crescente
-//        A[i] = i;
+        A[i] = i;
         //Decrescente
-        A[i] = (N - 1) - i;
-//        printf("%d  ,",A[i]);
-        if (N<16) printf("%d ", A[i]);             
+//        A[i] = (N - 1) - i;
+        printf("%d  ,",A[i]);
+//        if (N<16) printf("%d ", A[i]);             
     }
     printf("\n");
             
@@ -231,10 +231,10 @@ int main(void) {
     printf("\n");
     
     if (N<16) printf("vetor = \n");
-    for (i=0;i<N;i++) {
-        A[i] = N* ((double)rand()/RAND_MAX);    
-        if (N<16) printf("%d ", A[i]);             
-    }
+//    for (i=0;i<N;i++) {
+//        A[i] = N* ((double)rand()/RAND_MAX);    
+//        if (N<16) printf("%d ", A[i]);             
+//    }
     printf("\n");
         
     j = selecao();
@@ -245,10 +245,10 @@ int main(void) {
     printf("\n");
     
     if (N<16) printf("vetor = \n");
-    for (i=0;i<N;i++) {
-        A[i] = N* ((double)rand()/RAND_MAX);    
-        if (N<16) printf("%d ", A[i]);             
-    }
+//    for (i=0;i<N;i++) {
+//        A[i] = N* ((double)rand()/RAND_MAX);    
+//        if (N<16) printf("%d ", A[i]);             
+//    }
     printf("\n");
     
     j = insercao();
@@ -261,10 +261,10 @@ int main(void) {
     contMergeSort = 0;
     
     if (N<16) printf("vetor = \n");
-    for (i=0;i<N;i++) {
-        A[i] = N* ((double)rand()/RAND_MAX);    
-        if (N<16) printf("%d ", A[i]);             
-    }
+//    for (i=0;i<N;i++) {
+//        A[i] = N* ((double)rand()/RAND_MAX);    
+//        if (N<16) printf("%d ", A[i]);             
+//    }
     printf("\n");
     
     mergeSort(A, N);
@@ -278,10 +278,10 @@ int main(void) {
     contQuickSort = 0;
     
     if (N<16) printf("vetor = \n");
-    for (i=0;i<N;i++) {
-        A[i] = N* ((double)rand()/RAND_MAX);    
-        if (N<16) printf("%d ", A[i]);             
-    }
+//    for (i=0;i<N;i++) {
+//        A[i] = N* ((double)rand()/RAND_MAX);    
+//        if (N<16) printf("%d ", A[i]);             
+//    }
     printf("\n");
     
     quickSort(A, 0, N-1);
