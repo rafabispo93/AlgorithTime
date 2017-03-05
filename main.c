@@ -25,7 +25,6 @@ long bolha(void) {
    long cont=0;
    int i;
    long trocas = 0;
-   
    while(parar == 0)
    {
        parar = 1;   
@@ -201,42 +200,44 @@ void quickSort(int *a, int left, int right)
 
 int main(void) {
     int i; long j;
-    
+   
     printf("digite o tamanho do vetor n: ");
     scanf("%d", &N);
-    
+    A = (int *) malloc(N*sizeof(int));
     if ( (A = (int *) malloc(N*sizeof(int)) ) == NULL ) {
          printf("Memória Insuficiente!\n");
          exit(1);
     }
-    
+  
     if (N<16) printf("vetor = \n");
     for (i=0;i<N;i++) {
         //Random
-//        A[i] = N* ((double)rand()/RAND_MAX);
+        A[i] = N* ((double)rand()/RAND_MAX);
         //Crescente
-        A[i] = i;
+//        A[i] = i;
         //Decrescente
 //        A[i] = (N - 1) - i;
-        printf("%d  ,",A[i]);
 //        if (N<16) printf("%d ", A[i]);             
     }
     printf("\n");
-            
+    
     j = bolha();
     printf("comparacoes da bolha: %lu\n", j);
-    
     if (N<16) for (i=0;i<N;i++) 
         printf("%d ", A[i]);   
     printf("\n");
     
     if (N<16) printf("vetor = \n");
-//    for (i=0;i<N;i++) {
-//        A[i] = N* ((double)rand()/RAND_MAX);    
-//        if (N<16) printf("%d ", A[i]);             
-//    }
     printf("\n");
-        
+    for (i=0;i<N;i++) {
+        //Random
+        A[i] = N* ((double)rand()/RAND_MAX);
+        //Crescente
+//        A[i] = i;
+        //Decrescente
+//        A[i] = (N - 1) - i;
+//        if (N<16) printf("%d ", A[i]);             
+    }
     j = selecao();
     printf("comparacoes da selecao: %lu\n", j); 
     
@@ -245,12 +246,18 @@ int main(void) {
     printf("\n");
     
     if (N<16) printf("vetor = \n");
-//    for (i=0;i<N;i++) {
-//        A[i] = N* ((double)rand()/RAND_MAX);    
-//        if (N<16) printf("%d ", A[i]);             
-//    }
+    
     printf("\n");
     
+    for (i=0;i<N;i++) {
+        //Random
+        A[i] = N* ((double)rand()/RAND_MAX);
+        //Crescente
+//        A[i] = i;
+        //Decrescente
+//        A[i] = (N - 1) - i;
+//        if (N<16) printf("%d ", A[i]);             
+    }
     j = insercao();
     printf("comparacoes da insercao: %lu\n", j); 
     
@@ -261,10 +268,15 @@ int main(void) {
     contMergeSort = 0;
     
     if (N<16) printf("vetor = \n");
-//    for (i=0;i<N;i++) {
-//        A[i] = N* ((double)rand()/RAND_MAX);    
+for (i=0;i<N;i++) {
+        //Random
+        A[i] = N* ((double)rand()/RAND_MAX);
+        //Crescente
+//        A[i] = i;
+        //Decrescente
+//        A[i] = (N - 1) - i;
 //        if (N<16) printf("%d ", A[i]);             
-//    }
+    }
     printf("\n");
     
     mergeSort(A, N);
@@ -278,10 +290,15 @@ int main(void) {
     contQuickSort = 0;
     
     if (N<16) printf("vetor = \n");
-//    for (i=0;i<N;i++) {
-//        A[i] = N* ((double)rand()/RAND_MAX);    
+for (i=0;i<N;i++) {
+        //Random
+        A[i] = N* ((double)rand()/RAND_MAX);
+        //Crescente
+//        A[i] = i;
+        //Decrescente
+//        A[i] = (N - 1) - i;
 //        if (N<16) printf("%d ", A[i]);             
-//    }
+    }
     printf("\n");
     
     quickSort(A, 0, N-1);
